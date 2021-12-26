@@ -1,0 +1,13 @@
+<Grid item xs={12}>
+        <Pagination
+          count={Math.ceil(total / perPage)}
+          variant="outlined"
+          shape="rounded"
+          onChange={(e, value) => {
+            console.log(value);
+            props.history.push("/toys/" + value);
+          }}
+        />{" "}
+        Total: {total} Showing {(page - 1) * perPage} to{" "}
+        {(page - 1) * perPage + toys.length}
+      </Grid>
